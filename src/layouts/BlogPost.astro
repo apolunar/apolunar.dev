@@ -7,7 +7,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, author, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <html lang="en">
@@ -15,7 +15,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<BaseHead title={title} description={description} />
 		<style>
 			main {
-				width: calc(100% - 2em);
+				width: calc(100% - 1em);
 				max-width: 100%;
 				margin: 0;
 			}
@@ -29,11 +29,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				box-shadow: var(--box-shadow);
 			}
 			.prose {
-				width: 720px;
+				width: var(--width);
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
-				color: rgb(var(--gray-dark));
+				color: var(--text-color);
 			}
 			.title {
 				margin-bottom: 1em;
@@ -62,8 +62,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div>
 				<div class="prose">
-					<div class="title">
-						<div class="date">
+					{title &&<div class="title">
+						{pubDate && <div class="date">
 							<FormattedDate date={pubDate} />
 							{
 								updatedDate && (
@@ -72,10 +72,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 									</div>
 								)
 							}
-						</div>
+						</div>}
 						<h1>{title}</h1>
 						<hr />
-					</div>
+					</div>}
 					<slot />
 				</div>
 			</article>

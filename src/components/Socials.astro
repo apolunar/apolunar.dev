@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="social-links">
+    <div class="social-link">
+        <a href="https://mastodon.social/@apolunar" target="_blank">
+            <span class="sr-only">Follow me on Mastodon</span>
+            <Icon name="ri:mastodon-line" />
+        </a>
+    </div>
+    <div class="social-link">
+        <a href="https://github.com/apolunar" target="_blank">
+            <span class="sr-only">Follow me on GitHub</span>
+            <Icon name="ri:github-line" />
+        </a>
+    </div>
+    <div class="social-link">
+        <a href="/rss.xml" target="_blank">
+            <span class="sr-only">Follow the RSS feed</span>
+            <Icon name="ri:rss-line" />
+        </a>
+    </div>
+    <div class="social-link">
+        <a href="mailto:apolunar@apolunar.dev" target="_blank">
+            <span class="sr-only">Email me</span>
+            <Icon name="ri:mail-line" />
+        </a>
+    </div>
+</div>
+<style>
+	.social-links a {
+		display: flex;
+		color: var(--gray);
+	}
+	.social-links a:hover {
+		color: var(--highlight-color);
+	}
+    .social-links {
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+		margin-top: 1em;
+	}
+</style>
