@@ -3,4 +3,5 @@
 # TODO: RUN TESTS!!
 
 npm run build
-npx wrangler pages deploy dist
+
+scp -r dist scp://root@racknerd:22222/root/
